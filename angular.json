@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Git-Explore"
+    }
+  },
+  "defaultProject": "Git-Explore",
+  "cli": {
+    "analytics": "41f85613-da50-4091-96d3-ec285c8bb311"
+  }
 }
