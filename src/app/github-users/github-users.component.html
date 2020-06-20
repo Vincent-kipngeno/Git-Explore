@@ -2,3 +2,55 @@
 <form #goalForm ='ngForm' class=""  action="index.html" method="post">
   <input type="text" [(ngModel)]="userName" name="use" #use='ngModel' (keyup)='getUser()'value="">
 </form>-->
+<div class="container">
+  <div class="card bg-basic">
+    <div class="card-head">
+      <div class="card-title head">
+        <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{user.avatar_url}}" class="mx-auto d-block img-thumbnail img-fluid"  alt="profile photo"> <br>
+          <div class="bio">
+            <ul class="list list-unstyled">
+              <li *ngIf = 'user.name'>Name: {{user.name}}</li>
+              <li *ngIf = 'user.company'>company: {{user.company}}</li>
+              <li *ngIf = 'user.email'>Email: {{user.email}}</li>
+              <li *ngIf = 'user.hireable'>Available for hire</li>
+              <li *ngIf = 'user.twitter_username'>Twitter user name: {{user.twitter_username}}</li>
+            </ul>
+            <div *ngIf = 'user.bio' class="">
+              <h5>BIO</h5>
+              <p>{{user.bio}}</p>
+            </div>
+          </div>
+          <div class="button">
+            <span class="btn btn-primary">{{user.public_gists}} public_gists</span>
+            <span class="btn btn-success">{{user.public_repos}} public_repos</span>
+            <span class="btn btn-danger">{{user.followers}} followers</span>
+            <span class="btn btn-warning">{{user.following}} following</span>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="col-md-12" *ngFor = 'let repo of repos; let i = index'>
+              <div class="container" *ngIf="i<3">
+                <hr>
+                <p><span style = "color: blue">{{repo.name}}</span> <a class="float-right btn btn-success" href="{{repo.html_url}}"> View in Github </a></p>
+                <p>{{repo.description}}</p>
+                <p style = "margin-top: 8px;"><span style = "color: brown">{{repo.language}}</span> <span class="float-right">⭐ {{repo.stargazers_count}}</span></p>
+                <hr>
+              </div>
+          </div>
+          <div class="button">
+            <button type="button" (click)='goToUrl()' class="btn btn-primary" name="button">View more Repositories</button>
+          </div>
+          </div>
+      </div>
+    <div class="card-footer">
+
+    </div>
+  </div>
+</div>
