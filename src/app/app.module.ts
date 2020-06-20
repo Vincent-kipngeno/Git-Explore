@@ -20,7 +20,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
