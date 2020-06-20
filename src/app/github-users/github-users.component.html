@@ -1,8 +1,10 @@
-<!---
-<form #goalForm ='ngForm' class=""  action="index.html" method="post">
-  <input type="text" [(ngModel)]="userName" name="use" #use='ngModel' (keyup)='getUser()'value="">
-</form>-->
 <div class="container">
+  <form #goalForm ='ngForm' class="form"  action="index.html" method="post">
+    <div class="form-group">
+      <input class="form-control" placeholder="Search By User Name" type="text" [(ngModel)]="userName" name="use" #use='ngModel' (keyup)='getUser()'value="">
+      <button class="btn btn-success" (click)='getUser()' type="button" name="button">SEARCH</button>
+    </div>
+  </form>
   <div class="card bg-basic">
     <div class="card-head">
       <div class="card-title head">
