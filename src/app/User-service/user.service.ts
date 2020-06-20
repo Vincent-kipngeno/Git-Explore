@@ -67,23 +67,7 @@ export class UserService {
    }
 
    getProfileRepos() {
-     interface ApiResponse{
-       login:string;
-       avatar_url:string;
-       public_gists:number;
-       public_repos:number
-       location:string;
-       name: string;
-       company: string;
-       email: string;
-       hireable: boolean;
-       bio: string;
-       twitter_username: string;
-       followers: number;
-       following: number;
-       created_at: Date;
-     }
-  	return this.http.get<ApiResponse[]>(`https://api.github.com/users/${this.userName}/repos?access_token=${environment.apiKey}`)
+  	return this.http.get(`https://api.github.com/users/${this.userName}/repos?access_token=${environment.apiKey}`)
   	.pipe(map(res => res));
   }
 
