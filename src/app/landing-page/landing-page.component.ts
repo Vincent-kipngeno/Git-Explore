@@ -10,11 +10,13 @@ import { UserService } from '../User-service/user.service';
 export class LandingPageComponent implements OnInit {
 
   user: User;
+  userName: string;
   constructor(private userService:UserService) {
-
   }
 
+
   ngOnInit(): void {
+
     this.userService.quoteRequest();
     this.user = this.userService.user;
   }

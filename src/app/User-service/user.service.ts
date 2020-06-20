@@ -10,11 +10,11 @@ import { User } from '../user'
 })
 export class UserService {
   user: User;
-  userName: string;
-  error:boolean;
+  private userName: string;
+  private error:boolean;
   users: User[];
   constructor(private http:HttpClient) {
-    this.user = new User("", "", 0, 0)
+    this.user = new User("", "", "", 0, 0)
     this.userName = "vincent-kipngeno"
   }
 
@@ -25,6 +25,7 @@ export class UserService {
        avatar_url:string;
        public_gists:number;
        public_repos:number
+       location:string
      }
      let promise = new Promise((resolve,reject)=>{
        this.http.get<ApiResponse>(`https://api.github.com/users/${this.userName}?access_token=${environment.apiKey}`).toPromise().then(response=>{
@@ -32,8 +33,7 @@ export class UserService {
          this.user.avatar_url = response.avatar_url;
          this.user.public_gists = response.public_gists;
          this.user.public_gists = response.public_gists;
-         this.users.push(this.user);
-         this.error = false;
+         this.user.location = response.location;
          resolve()
        },
        error=>{
@@ -44,5 +44,9 @@ export class UserService {
      })
      return promise
    }
+
+   /*updateUserName(username: string){
+     this.userName = username;
+   }*/
 
 }

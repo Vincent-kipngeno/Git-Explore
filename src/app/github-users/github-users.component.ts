@@ -9,6 +9,13 @@ export class GithubUsersComponent implements OnInit {
 
   constructor() { }
 
+  /*getUser(){
+
+    this.userService.updateUserName(this.userName);
+    this.userService.quoteRequest();
+    this.user = this.userService.user;
+  }*/
+
   ngOnInit(): void {
   }
 
