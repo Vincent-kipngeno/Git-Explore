@@ -11,6 +11,7 @@ export class LandingPageComponent implements OnInit {
 
   user: User;
   userName: string;
+  users: User[];
   constructor(private userService:UserService) {
   }
 
@@ -19,6 +20,6 @@ export class LandingPageComponent implements OnInit {
 
     this.userService.quoteRequest();
     this.user = this.userService.user;
-  }
 
-}
+    }
+  }
