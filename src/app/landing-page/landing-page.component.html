@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card bg-secondary">
+  <div class="card bg-basic">
     <div class="card-head">
       <div class="card-title head">
         <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
@@ -22,6 +22,12 @@
               <p>{{user.bio}}</p>
             </div>
           </div>
+          <div class="button">
+            <span class="btn btn-primary">{{user.public_gists}} public_gists</span>
+            <span class="btn btn-success">{{user.public_repos}} public_repos</span>
+            <span class="btn btn-danger">{{user.followers}} followers</span>
+            <span class="btn btn-warning">{{user.following}} following</span>
+          </div>
         </div>
         <div class="col-md-8">
           <div class="card">
@@ -30,9 +36,12 @@
                 <hr>
                 <p><span style = "color: blue">{{repo.name}}</span> <a class="float-right btn btn-success" href="{{repo.html_url}}"> View in Github </a></p>
                 <p>{{repo.description}}</p>
-                <p><span style = "color: brown">{{repo.language}}</span> <span class="float-right">⭐ {{repo.stargazers_count}}</span></p>
+                <p style = "margin-top: 8px;"><span style = "color: brown">{{repo.language}}</span> <span class="float-right">⭐ {{repo.stargazers_count}}</span></p>
                 <hr>
               </div>
+          </div>
+          <div class="button">
+            <button type="button" (click)='goToUrl()' class="btn btn-primary" name="button">View more Repositories</button>
           </div>
           </div>
       </div>

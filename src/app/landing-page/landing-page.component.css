@@ -13,4 +13,11 @@ img{
 }
 .bio{
   text-align: center;
+  color: blue;
+}
+.button{
+  text-align: center;
+}
+.btn{
+  margin: 5px;
 }

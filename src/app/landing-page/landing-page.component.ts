@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../User-service/user.service';
 import { RepoService } from '../Repo-service/repo.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -14,7 +14,11 @@ export class LandingPageComponent implements OnInit {
   userName: string;
   users: User[];
   repos: any;
-  constructor(private userService:UserService, private repoService:RepoService) {
+  constructor(private router:Router, private userService:UserService, private repoService:RepoService) {
+  }
+
+  goToUrl(){
+    this.router.navigate(['/landing',"vincent-kipngeno"])
   }
 
 
