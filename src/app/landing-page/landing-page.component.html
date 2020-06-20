@@ -1,16 +1,14 @@
 <div class="container">
-  <div class="card">
+  <div class="card bg-secondary">
     <div class="card-head">
-      <div class="card-title  ">
-        <div class="head" >
-          <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
-        </div>
+      <div class="card-title head">
+        <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
       </div>
     </div>
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
-          <img src="{{user.avatar_url}}" class="mx-auto d-block rounded-circle img-fluid"  alt="profile photo"> <br>
+          <img src="{{user.avatar_url}}" class="mx-auto d-block img-thumbnail img-fluid"  alt="profile photo"> <br>
           <div class="bio">
             <ul class="list list-unstyled">
               <li *ngIf = 'user.name'>Name: {{user.name}}</li>
@@ -25,10 +23,21 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-
-        </div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="col-md-12" *ngFor = 'let repo of repos; let i = index'>
+              <div class="container" *ngIf="i<3">
+                <hr>
+                <p><span style = "color: blue">{{repo.name}}</span> <a class="float-right btn btn-success" href="{{repo.html_url}}"> View in Github </a></p>
+                <p>{{repo.description}}</p>
+                <p><span style = "color: brown">{{repo.language}}</span> <span class="float-right">⭐ {{repo.stargazers_count}}</span></p>
+                <hr>
+              </div>
+          </div>
+          </div>
       </div>
+    <div class="card-footer">
+
     </div>
   </div>
 </div>
