@@ -1,5 +1,19 @@
-<!---
-<form #goalForm ='ngForm' class=""  action="index.html" method="post">
-  <input type="text" [(ngModel)]="userName" name="use" #use='ngModel' (keyup)='getUser()'value="">
-</form>-->
-<p>{{user.login}}</p> .
+<div class="container">
+  <div class="panel">
+    <div class="panel-head">
+      <div class="panel-title ">
+        <p class="mx-auto d-block">
+          User Name: {{user.login}} || Location: {{user.location}}
+        </p>
+      </div>
+    </div>
+
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{user.avatar_url}}" class="mx-auto d-block img-thumbnail img-fluid"  alt="profile photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
