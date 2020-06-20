@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../User-service/user.service';
+import { RepoService } from '../Repo-service/repo.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,7 +13,8 @@ export class LandingPageComponent implements OnInit {
   user: User;
   userName: string;
   users: User[];
-  constructor(private userService:UserService) {
+  repos: any;
+  constructor(private userService:UserService, private repoService:RepoService) {
   }
 
 
@@ -20,6 +22,11 @@ export class LandingPageComponent implements OnInit {
 
     this.userService.quoteRequest();
     this.user = this.userService.user;
+    this.repoService.getUserRepos("vincent-kipngeno").subscribe(repositories =>{
+      console.log(repositories);
+      this.repos = repositories;
+    })
+
 
     }
   }
