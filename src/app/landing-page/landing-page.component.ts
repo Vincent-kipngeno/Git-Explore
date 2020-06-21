@@ -3,6 +3,7 @@ import { User } from '../user';
 import { UserService } from '../User-service/user.service';
 import { RepoService } from '../Repo-service/repo.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -27,10 +28,9 @@ export class LandingPageComponent implements OnInit {
     this.userService.quoteRequest();
     this.user = this.userService.user;
     this.repoService.getUserRepos("vincent-kipngeno").subscribe(repositories =>{
-      
+      console.log(repositories);
       this.repos = repositories;
     })
-
-
+    
     }
   }
