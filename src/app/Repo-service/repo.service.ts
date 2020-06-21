@@ -18,8 +18,8 @@ export class RepoService {
     this.repoName = "Quotes";
   }
 
-  getRepos() {
-   return this.http.get(`https://api.github.com/search/repositories?q=tetris&per_page=1000?access_token=${environment.apiKey}`).pipe(map(res => res));
+  getRepos(reponame) {
+   return this.http.get(`https://api.github.com/search/repositories?q=${reponame}&per_page=1000?access_token=${environment.apiKey}`).pipe(map(res => res));
  }
 
   getUserRepos(username) {

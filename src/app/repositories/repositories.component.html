@@ -1,8 +1,8 @@
 <div class="container">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
+    <input type="text" class="form-control" [(ngModel)]="repoName" name="repository" #repository='ngModel' placeholder="Repository Name">
     <div class="input-group-append">
-      <button class="btn btn-success" type="submit" (click)='getUser()'>Go</button>
+      <button class="btn btn-success" type="submit" (click)='findRepository()'>Go</button>
     </div>
   </div>
   <div class="row">
