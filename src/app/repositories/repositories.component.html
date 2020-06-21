@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit" (click)='getUser()'>Go</button>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-2">
 
