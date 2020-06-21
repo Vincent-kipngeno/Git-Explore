@@ -13,10 +13,11 @@ import { Router } from '@angular/router';
 export class GithubUsersComponent implements OnInit {
 
   user: User;
-  userName: string;
+  userName: string
   users: User[];
   repos: any;
   constructor(private router:Router, private userService:UserService, private repoService:RepoService) {
+
   }
   getUser(){
 
@@ -30,11 +31,17 @@ export class GithubUsersComponent implements OnInit {
   }
 
   goToUrl(){
-    this.router.navigate(['/landing',this.userName]);
+    this.router.navigate(['/landing',this.userName ]);
   }
 
 
   ngOnInit(): void {
-
+    this.userService.updateUserName("alvin");
+    this.userService.quoteRequest();
+    this.user = this.userService.user;
+    this.repoService.getUserRepos("alvin").subscribe(repositories =>{
+      console.log(repositories);
+      this.repos = repositories;
+    })
     }
   }

@@ -23,7 +23,7 @@ export class LandingPageComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.userService.updateUserName("vincent-kipngeno");
     this.userService.quoteRequest();
     this.user = this.userService.user;
     this.repoService.getUserRepos("vincent-kipngeno").subscribe(repositories =>{

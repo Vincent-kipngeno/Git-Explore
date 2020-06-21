@@ -4,20 +4,13 @@ img{
 .card1{
 
 }
-.head{
-  background-color: black;
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 1px;
-  border-bottom: 1px solid grey;
-}
-.bio{
+/*.bio{
   text-align: center;
   color: blue;
-}
+}*/
 .button{
   text-align: center;
 }
-.btn{
+.btn1{
   margin: 5px;
 }

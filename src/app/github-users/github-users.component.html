@@ -1,14 +1,14 @@
 <div class="container">
-  <form #goalForm ='ngForm' class="form"  action="index.html" method="post">
-    <div class="form-group">
-      <input class="form-control" placeholder="Search By User Name" type="text" [(ngModel)]="userName" name="use" #use='ngModel' (keyup)='getUser()'value="">
-      <button class="btn btn-success" (click)='getUser()' type="button" name="button">SEARCH</button>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit" (click)='getUser()'>Go</button>
     </div>
-  </form>
+  </div>
   <div class="card bg-basic">
     <div class="card-head">
       <div class="card-title head">
-        <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
+        <h6>User Name: {{user.login}} || Location: {{user.location}}</h6>
       </div>
     </div>
     <div class="card-body">
@@ -29,10 +29,10 @@
             </div>
           </div>
           <div class="button">
-            <span class="btn btn-primary">{{user.public_gists}} public_gists</span>
-            <span class="btn btn-success">{{user.public_repos}} public_repos</span>
-            <span class="btn btn-danger">{{user.followers}} followers</span>
-            <span class="btn btn-warning">{{user.following}} following</span>
+            <span class="btn btn1 btn-primary">{{user.public_gists}} public_gists</span>
+            <span class="btn btn1 btn-success">{{user.public_repos}} public_repos</span>
+            <span class="btn btn1 btn-danger">{{user.followers}} followers</span>
+            <span class="btn btn1 btn-warning">{{user.following}} following</span>
           </div>
         </div>
         <div class="col-md-8">
@@ -47,7 +47,7 @@
               </div>
           </div>
           <div class="button">
-            <button type="button" (click)='goToUrl()' class="btn btn-primary" name="button">View more Repositories</button>
+            <button type="button" (click)='goToUrl()' class="btn btn1 btn-primary" name="button">View more Repositories</button>
           </div>
           </div>
       </div>
