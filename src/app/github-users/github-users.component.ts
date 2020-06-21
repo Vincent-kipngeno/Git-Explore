@@ -30,7 +30,7 @@ export class GithubUsersComponent implements OnInit {
   }
 
   goToUrl(){
-    this.router.navigate(['/landing','vincent-kipngeno']);
+    this.router.navigate(['/landing',this.userName]);
   }
 
 

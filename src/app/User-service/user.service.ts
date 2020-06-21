@@ -71,8 +71,8 @@ export class UserService {
   	.pipe(map(res => res));
   }
 
-   /*updateUserName(username: string){
+   updateUserName(username: string){
      this.userName = username;
-   }*/
+   }
 
 }
