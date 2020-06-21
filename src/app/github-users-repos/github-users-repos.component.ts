@@ -15,7 +15,7 @@ export class GithubUsersReposComponent implements OnInit {
   ngOnInit(): void {
     let username = this.router.snapshot.paramMap.get('username');
     this.repoService.getUserRepos(username).subscribe(repositories =>{
-      console.log(repositories);
+      
       this.repos = repositories;
     })
   }

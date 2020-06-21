@@ -27,7 +27,7 @@ export class LandingPageComponent implements OnInit {
     this.userService.quoteRequest();
     this.user = this.userService.user;
     this.repoService.getUserRepos("vincent-kipngeno").subscribe(repositories =>{
-      console.log(repositories);
+      
       this.repos = repositories;
     })
 
