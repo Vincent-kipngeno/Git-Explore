@@ -1,4 +1,7 @@
 <div class="container" >
+  <div class="jumbotron first" style="background-color: orange">
+    <p>WELCOME TO GIT EXPLORE</p>
+  </div>
   <div class="input-group mb-3">
     <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
     <div class="input-group-append">
@@ -8,7 +11,7 @@
   <div class=" bg-basic" *ngIf="isComplete">
     <div class="card-head">
       <div class="card-title head">
-        <h6 style="color:orange"><span style="color:green; font-family: sans-serif; font-size:19px;">User Name:</span> {{user.login}} || <span style="color:green; font-family: sans-serif; font-size:19px;">Location:</span> {{user.location}}</h6>
+        <h6 style="color:orange"><span style="color:greenyellow; font-family: sans-serif; font-size:19px;">User Name:</span> {{user.login}} || <span style="color:greenyellow; font-family: sans-serif; font-size:19px;">Location:</span> {{user.location}}</h6>
       </div>
     </div>
     <div class="card-body">
@@ -18,17 +21,17 @@
           <div class="bio">
             <div class="square">
               <ul class="list list-unstyled">
-                <li *ngIf = 'user.name'><span style="color:red;">Name</span>: {{user.name}}</li>
-                <li *ngIf = 'user.company'><span style="color:red;">company</span>: {{user.company}}</li>
-                <li *ngIf = 'user.email'><span style="color:red;">Email</span>: {{user.email}}</li>
+                <li *ngIf = 'user.name'><span style="color:greenyellow;">Name</span>: {{user.name}}</li>
+                <li *ngIf = 'user.company'><span style="color:greenyellow;">company</span>: {{user.company}}</li>
+                <li *ngIf = 'user.email'><span style="color:greenyellow;">Email</span>: {{user.email}}</li>
                 <li *ngIf = 'user.hireable'>Available for hire</li>
-                <li *ngIf = 'user.twitter_username'><span style="color:red;">Twitter user name</span>: {{user.twitter_username}}</li>
-                <li><span style="color:red;">Created at</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
+                <li *ngIf = 'user.twitter_username'><span style="color:greenyellow;">Twitter user name</span>: {{user.twitter_username}}</li>
+                <li><span style="color:greenyellow;">Created on</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
               </ul>
             </div>
             <div *ngIf = 'user.bio' style="text-align:center" class="">
-              <h5 style="color:red; text-align:center">BIO</h5>
-              <p>{{user.bio}}</p>
+              <h5 style="color:green; text-align:center">BIO</h5>
+              <p style="color:purple;">{{user.bio}}</p>
             </div>
           </div>
           <div class="button">

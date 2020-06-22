@@ -20,18 +20,18 @@
             <div class="square-container">
               <div class="square">
                 <ul class="list list-unstyled">
-                  <li *ngIf = 'user.name'><span style="color:red;">Name</span>: {{user.name}}</li>
-                  <li *ngIf = 'user.company'><span style="color:red;">company</span>: {{user.company}}</li>
-                  <li *ngIf = 'user.email'><span style="color:red;">Email</span>: {{user.email}}</li>
+                  <li *ngIf = 'user.name'><span style="color:#00ccff;">Name</span>: {{user.name}}</li>
+                  <li *ngIf = 'user.company'><span style="color:#00ccff;">company</span>: {{user.company}}</li>
+                  <li *ngIf = 'user.email'><span style="color:#00ccff;">Email</span>: {{user.email}}</li>
                   <li *ngIf = 'user.hireable'>Available for hire</li>
-                  <li *ngIf = 'user.twitter_username'><span style="color:red;">Twitter user name</span>: {{user.twitter_username}}</li>
-                  <li><span style="color:red;">Created at</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
+                  <li *ngIf = 'user.twitter_username'><span style="color:#00ccff;">Twitter user name</span>: {{user.twitter_username}}</li>
+                  <li><span style="color:#00ccff;">Created on</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
                 </ul>
               </div>
             </div>
             <div *ngIf = 'user.bio' style="text-align:center" class="">
-              <h5 style="color:red; text-align:center">BIO</h5>
-              <p>{{user.bio}}</p>
+              <h5 style="color:#00ccff; text-align:center">BIO</h5>
+              <p style="color:#77ff33;">{{user.bio}}</p>
             </div>
           </div>
           <div class="button">

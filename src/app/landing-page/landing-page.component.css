@@ -21,7 +21,7 @@ img{
   text-align: center;
   padding: 10px;
   border-top: 4px solid red;
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid #77ff33;
   border-left: 4px solid blue;
   border-right: 4px solid yellow;
   color: orange;
