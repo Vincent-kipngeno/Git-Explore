@@ -9,6 +9,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GithubUsersComponent } from './github-users/github-users.component';
 import { GithubUsersReposComponent } from './github-users-repos/github-users-repos.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { TimeAgoPipe } from './time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RepositoriesComponent } from './repositories/repositories.component';
     LandingPageComponent,
     GithubUsersComponent,
     GithubUsersReposComponent,
-    RepositoriesComponent
+    RepositoriesComponent,
+    NavbarComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
