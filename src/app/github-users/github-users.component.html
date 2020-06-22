@@ -18,12 +18,14 @@
   <div class="jumbotron first" style="background-color: orange">
     <p>WELCOME TO GIT EXPLORE</p>
   </div>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
-    <div class="input-group-append">
-      <button class="btn btn-success" type="submit" (click)='getUser()'>Go</button>
+  <form class="" #goalForm='ngForm' action="index.html" method="post">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="userName" name="use" #use='ngModel' placeholder="Username">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="submit" (click)='getUser()'>Go</button>
+      </div>
     </div>
-  </div>
+  </form>
   <div class=" bg-basic" *ngIf="isComplete">
     <div class="card-head">
       <div class="card-title head">
