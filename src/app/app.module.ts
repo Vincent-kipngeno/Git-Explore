@@ -11,6 +11,7 @@ import { GithubUsersReposComponent } from './github-users-repos/github-users-rep
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeAgoPipe } from './time-ago.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TimeAgoPipe } from './time-ago.pipe';
     GithubUsersReposComponent,
     RepositoriesComponent,
     NavbarComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ export class UserService {
   private error:boolean;
   users: User[] = [];
   constructor(private http:HttpClient) {
-    this.user = new User("", "", "", 0, 0, "", "", "", true, "", "", 0, 0, new Date());
+    this.user = new User("", "", "", 0, 0, "", "", "", true, "", "", 0, 0, new Date(),"");
     this.userName = "vincent-kipngeno"
 
   }
@@ -36,6 +36,7 @@ export class UserService {
       followers: number;
       following: number;
       created_at: Date;
+      html_url: string;
     }
 
      let promise = new Promise((resolve,reject)=>{
@@ -54,6 +55,7 @@ export class UserService {
          this.user.followers = response.followers;
          this.user.following = response.following;
          this.user.created_at = response.created_at;
+         this.user.html_url = response.html_url;
          /*this.user = new User(response.login, response.avatar_url, response.location,  response.public_gists, response.public_repos, response.name, response.company, response.email, response.hireable,response.bio, response.twitter_username, response.followers, response.following, response.created_at);*/
          resolve()
        },

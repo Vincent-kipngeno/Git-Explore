@@ -9,16 +9,20 @@
       <div class="row">
         <div class="col-md-4">
           <img src="{{user.avatar_url}}" class="mx-auto d-block img-thumbnail img-fluid"  alt="profile photo"> <br>
+          <div class="button">
+            <p><a class="btn btn-info" href="{{user.html_url}}">View Profile In Github</a></p>
+          </div>
           <div class="bio">
             <ul class="list list-unstyled">
-              <li *ngIf = 'user.name'>Name: {{user.name}}</li>
-              <li *ngIf = 'user.company'>company: {{user.company}}</li>
-              <li *ngIf = 'user.email'>Email: {{user.email}}</li>
+              <li *ngIf = 'user.name'><span style="color:red;">Name</span>: {{user.name}}</li>
+              <li *ngIf = 'user.company'><span style="color:red;">company</span>: {{user.company}}</li>
+              <li *ngIf = 'user.email'><span style="color:red;">Email</span>: {{user.email}}</li>
               <li *ngIf = 'user.hireable'>Available for hire</li>
-              <li *ngIf = 'user.twitter_username'>Twitter user name: {{user.twitter_username}}</li>
+              <li *ngIf = 'user.twitter_username'><span style="color:red;">Twitter user name</span>: {{user.twitter_username}}</li>
+              <li><span style="color:red;">Created at</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
             </ul>
             <div *ngIf = 'user.bio' class="">
-              <h5>BIO</h5>
+              <h5 style="color:red; text-align:center">BIO</h5>
               <p>{{user.bio}}</p>
             </div>
           </div>
