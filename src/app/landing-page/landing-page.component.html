@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="card bg-basic">
+  <div class="header">
+    <h3>WELCOME TO GITHUB SEARCH.</h3>
+    <p>GO TO GITHUB USERS TO SEARCH FOR YOUR GITHUB DETAILS AND GITHUB REPOS TO SEARCH FOR ALL AMAZING GITHUB REPOSITORIES</p>
+  </div>
+  <div class=" bg-basic">
     <div class="card-head">
       <div class="card-title head">
-        <h6>User Name: {{user.login}} || Location: {{user.login}}</h6>
+        <h6 style="color:orange">User Name: {{user.login}} || Location: {{user.login}}</h6>
       </div>
     </div>
     <div class="card-body">
@@ -21,7 +25,7 @@
               <li *ngIf = 'user.twitter_username'><span style="color:red;">Twitter user name</span>: {{user.twitter_username}}</li>
               <li><span style="color:red;">Created at</span>: {{user.created_at |date:'medium' |timeAgo}}</li>
             </ul>
-            <div *ngIf = 'user.bio' class="">
+            <div *ngIf = 'user.bio' style="text-align:center" class="">
               <h5 style="color:red; text-align:center">BIO</h5>
               <p>{{user.bio}}</p>
             </div>
