@@ -16,11 +16,14 @@ export class GithubUsersComponent implements OnInit {
   userName: string
   users: User[];
   repos: any;
+  isComplete: boolean;
   constructor(private router:Router, private userService:UserService, private repoService:RepoService) {
 
   }
   getUser(){
-
+    if (!this.userName) {
+      this.userName = "alvin"
+    }
     this.userService.updateUserName(this.userName);
     this.userService.quoteRequest();
     this.user = this.userService.user;
@@ -31,6 +34,9 @@ export class GithubUsersComponent implements OnInit {
   }
 
   goToUrl(){
+    if (!this.userName) {
+      this.userName = "alvin"
+    }
     this.router.navigate(['/landing',this.userName ]);
   }
 
@@ -42,6 +48,11 @@ export class GithubUsersComponent implements OnInit {
     this.repoService.getUserRepos("alvin").subscribe(repositories =>{
       console.log(repositories);
       this.repos = repositories;
-    })
+      this.isComplete = true;
+    },
+    (error) => {
+         this.isComplete = false;
+         console.error(error);
+       });
     }
   }
