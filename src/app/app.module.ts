@@ -12,6 +12,7 @@ import { RepositoriesComponent } from './repositories/repositories.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TimeAgoPipe } from './time-ago.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HighlightDirective } from './highlight.directive';
     RepositoriesComponent,
     NavbarComponent,
     TimeAgoPipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

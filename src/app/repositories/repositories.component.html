@@ -5,7 +5,7 @@
       <button class="btn btn-success" type="submit" (click)='findRepository()'>Go</button>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="isComplete">
     <div class="col-md-2">
 
     </div>
@@ -22,6 +22,13 @@
       </div>
     <div class="col-md-2">
 
+    </div>
+  </div>
+  <div class="" *ngIf="!isComplete">
+    <div class="jumbotron">
+      <h1 class="display-4 text-center">Check Your Username</h1>
+      <hr class="my-4">
+      <p class="lead text-center">Sorry we could not find what you are looking for. Your username might not be accurate or an Error might have occurred !</p>
     </div>
   </div>
 </div>

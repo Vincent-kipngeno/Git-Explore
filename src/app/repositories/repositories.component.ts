@@ -12,6 +12,7 @@ export class RepositoriesComponent implements OnInit {
   repos:Repo[];
   repo:Repo;
   repoName:string;
+  isComplete:boolean;
   constructor(private repoService: RepoService) { }
   findRepository(){
     this.repo = this.repoService.repo;
@@ -20,8 +21,14 @@ export class RepositoriesComponent implements OnInit {
       console.log(data['items']);
       this.repos = data['items'];
       console.log(this.repos);
+      if (data['total_count']=0) {
+        this.isComplete = false;
+      } else{
+        this.isComplete = true;
+      }
     },
     (error) => {
+         this.isComplete = false;
          console.error(error);
        });
 
@@ -34,8 +41,14 @@ export class RepositoriesComponent implements OnInit {
       console.log(data['items']);
       this.repos = data['items'];
       console.log(this.repos);
+      if (data['total_count']=0) {
+        this.isComplete = false;
+      } else{
+        this.isComplete = true;
+      }
     },
     (error) => {
+         this.isComplete = false;
          console.error(error);
        });
   }

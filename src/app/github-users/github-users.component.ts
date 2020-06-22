@@ -27,10 +27,15 @@ export class GithubUsersComponent implements OnInit {
     this.userService.updateUserName(this.userName);
     this.userService.quoteRequest();
     this.user = this.userService.user;
-    this.repoService.getUserRepos(this.userName).subscribe(repositories =>{
-      console.log(repositories);
-      this.repos = repositories;
-    })
+    this.repoService.getUserRepos(this.userName).subscribe((data) =>{
+      console.log(data);
+      this.repos = data;
+      this.isComplete = true;
+    },
+    (error) => {
+         this.isComplete = false;
+         console.error(error);
+       });
   }
 
   goToUrl(){
@@ -45,9 +50,9 @@ export class GithubUsersComponent implements OnInit {
     this.userService.updateUserName("alvin");
     this.userService.quoteRequest();
     this.user = this.userService.user;
-    this.repoService.getUserRepos("alvin").subscribe(repositories =>{
-      console.log(repositories);
-      this.repos = repositories;
+    this.repoService.getUserRepos("alvin").subscribe((data) =>{
+      console.log(data);
+      this.repos = data;
       this.isComplete = true;
     },
     (error) => {
