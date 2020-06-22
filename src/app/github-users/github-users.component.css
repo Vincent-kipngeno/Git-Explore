@@ -10,6 +10,15 @@ img{
 .bio{
   text-align:;
   color: white;
+  font-family: cursive;
+  font-size: 20px;
+}
+.square{
+  width: auto;
+  height:auto;
+  position: relative;
+  left: 20%;
+  margin-left: -50px;
 }
 .button{
   text-align: center;
